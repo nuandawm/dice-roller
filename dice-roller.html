@@ -1,0 +1,23 @@
+<head>
+  <title>dice-roller</title>
+</head>
+
+<body>
+  <h1>Roll your dices!</h1>
+  {{> table}}
+</body>
+
+<template name="table">
+	{{#each allDices}}
+  	{{> diceType}}
+	{{/each}}
+	<button class="roll-butt">Roll</button>
+</template>
+
+<template name="diceType">
+<button class="more">+</button><button class="less">-</button> {{values.length}}d{{faces}}
+	{{#each values}}
+		<span class="dice-cell">{{this}}</span>
+	{{/each}}
+<br/>
+</template>
